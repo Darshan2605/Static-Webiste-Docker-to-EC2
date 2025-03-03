@@ -1,0 +1,14 @@
+Setup Docker Desktop on Windows
+On VS Code terminal of Project-
+docker login
+docker build -t static-website-docker-to-ec2:v1 .
+//tag image
+
+docker tag static-website-docker-to-ec2:v1 26052003/static-website:v1
+
+//push image to Public DockerHub Repo
+docker push 26052003/static-website:v1
+(docker push docker-id/public-docker-repo-name:image-tag-name)
+
+//now your docker image is pushed on DokcerHub Repository
+Check it on Browser.
