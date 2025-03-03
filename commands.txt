@@ -12,3 +12,24 @@ docker push 26052003/static-website:v1
 
 //now your docker image is pushed on DokcerHub Repository
 Check it on Browser.
+
+//connect to EC2 using SSH
+//sudo yum install docker  //install docker on ec2
+
+//after installation check status of docker on ec2
+sudo systemctl status docker
+
+//activate docker service on ec2
+sudo systemctl start docker
+
+//check docker images
+sudo docker images
+
+//now pull docker image from dockerhub to ec2-docker
+
+sudo docker pull 26052003/static-website:v1
+
+//now run docker image on ec2-docker
+sudo docker run --rm -d -p 3000:3000 26052003/static-website:v1
+
+//add 1 inbound rule on security group of ec2 to allow traffic on port 3000--------tcp-3000----from anywhere
